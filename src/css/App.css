@@ -1,0 +1,29 @@
+body {
+  font-family: "Oswald", sans-serif !important;
+  background: #f3f3f3;
+  color: #232528;
+}
+
+.text-title {
+  font-family: "Permanent Marker", cursive;
+  letter-spacing: 0.3rem;
+}
+
+.text-blue {
+  color: #2a2a72;
+}
+
+.text-bright {
+  color: #009ffd;
+}
+
+nav {
+  background: #2a2a72 !important;
+}
+
+nav .nav-link {
+  color: #f3f3f3;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=App.css.map */
