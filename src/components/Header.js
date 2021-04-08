@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import logo from '../logo.svg';
-import ButtonContainer from './ButtonContainer';
 
-const Navbar = () => {
-
+const Header = () => {
     return (
 
         <nav className="navbar navbar-expand-sm
@@ -22,17 +20,17 @@ const Navbar = () => {
                 </li>
             </ul>
             <Link to="/cart" className="ml-auto">
-                <ButtonContainer>
+                <button>
                     <span className=" mr-2 fas fa-cart-plus">
                     <i className="ml-1"> my cart</i>
                         
                     </span>
                     
-                </ButtonContainer>
+                </button>
             </Link>
         </nav>
 
     );
 }
-
-export default Navbar;
+ 
+export default Header;

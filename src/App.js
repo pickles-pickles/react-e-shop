@@ -4,29 +4,36 @@ import './css/App.css';
 import React, { useState } from 'react';
 import storeProducts from './data';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavBar from './components/Navbar';
-import ProductList from './components/ProductList';
+import Header from './components/Header';
 import Cart from './components/Cart';
-import Details from './components/Details';
-import Default from './components/Default';
+import Main from './components/Main';
 import { ProductProvider } from './context';
 
 
 function App() {
 
-  const [products, setProducts] = useState(storeProducts);
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleAdd = (product) => {
+    console.log("added to cart", cartItems);
+    setCartItems([...cartItems, { ...product },]);
+  };
 
   return (
     <React.Fragment>
       <ProductProvider>
         <Router>
-          <NavBar />
-          <Switch>
-            <Route exact path="/" component={ProductList}></Route>
-            <Route path="/details" component={Details}></Route>
-            <Route path="/cart" component={Cart}></Route>
-            <Route component={Default}></Route>
-          </Switch>
+          <Header />
+          
+            <Switch>
+              <Route exact path="/">
+                <Main handleAdd={(product) => handleAdd(product)} />
+              </Route>
+              <Route to="/cart">
+                <Cart setCartItems={setCartItems} cartItems={cartItems} />
+              </Route>
+            </Switch>
+          
         </Router>
       </ProductProvider>
 
