@@ -1,8 +1,6 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
-import React, { useState } from 'react';
-import storeProducts from './data';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Cart from './components/Cart';
