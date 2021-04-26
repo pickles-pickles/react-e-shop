@@ -1,7 +1,7 @@
 import React from 'react';
 import storeProducts from '../data';
-import Product from './Product';
-const Main = ({ products, handleAdd, }) => {
+import Product from './Product'; 
+const Products = ({ products, handleAdd, }) => {
     return (
             <div className="container">
                 <div className=" row justify-content-center my-2">
@@ -27,4 +27,4 @@ const Main = ({ products, handleAdd, }) => {
     );
 }
 
-export default Main;
+export default Products;
