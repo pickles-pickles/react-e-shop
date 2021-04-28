@@ -5,6 +5,7 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Cart from './components/Cart';
 import Products from './components/Products';
+import Details from './components/Details.jsx';
 import { ProductProvider } from './context';
 
 
@@ -12,9 +13,15 @@ function App() {
 
   const [cartItems, setCartItems] = useState([]);
 
+  const [details, setDetails] = useState({});
+  const showDetails = (product) =>{
+    setDetails(
+        product
+    )
+}
+
   const handleAdd = (product) => {
     setCartItems([...cartItems, { ...product },]);
-    console.log("added to cart", cartItems);
   };
 
   return (
@@ -25,11 +32,15 @@ function App() {
 
           <Switch>
             <Route exact path="/">
-              <Products handleAdd={(product) => handleAdd(product)} />
+              <Products handleAdd={(product) => handleAdd(product)}
+                        showDetails={(product) => showDetails(product)} />
             </Route>
-            <Route to="/cart">
+            <Route path="/cart">
               <Cart setCartItems={setCartItems} cartItems={cartItems} />
-            </Route>
+              </Route>
+              <Route path="/details">
+              <Details details={details} />
+              </Route>
           </Switch>
 
         </Router>

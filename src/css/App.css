@@ -94,4 +94,12 @@ nav button:focus {
   background: #009ffd;
   color: #2a2a72;
 }
+
+.no-border {
+  border: none;
+}
+
+.no-border:hover {
+  border: none;
+}
 /*# sourceMappingURL=App.css.map */

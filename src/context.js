@@ -1,26 +1,15 @@
-import React, { useState } from 'react';
-import storeProducts, { detailProduct } from './data';
+import React, {useState} from 'react';
+import storeProducts from './data';
 
 export const ProductContext = React.createContext();
 export const ProductProvider = (props) => {
-    const [state,] = useState({
+    const [state, ]= useState({
         products: storeProducts,
-        detailProduct: detailProduct,
     })
 
-    const handleDetail = () => {
-        console.log("this is detail");
-    }
-
-    const addToCart = () => {
-        console.log("this is add to cart");
-    }
-
-    return (
+    return(
         <ProductContext.Provider value={{
             ...state,
-            handleDetail: handleDetail,
-            addToCart: addToCart,
         }}>
             {props.children}
         </ProductContext.Provider>
