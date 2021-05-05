@@ -39,7 +39,7 @@ function App() {
               <Cart setCartItems={setCartItems} cartItems={cartItems} />
               </Route>
               <Route path="/details">
-              <Details details={details} />
+              <Details details={details} handleAdd={(details) => handleAdd(details)}/>
               </Route>
           </Switch>
 

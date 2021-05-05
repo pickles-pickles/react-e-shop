@@ -91,7 +91,14 @@ background: $lightBlue;
 color: $mainBlue;
 }
 
+.yellow {
+    border: 0.1rem solid  $mainYellow;
+    color:$mainYellow;  
+}
 
+.yellow:hover {
+    border:$lightBlue;  
+}
 
 .no-border{
     border: none;

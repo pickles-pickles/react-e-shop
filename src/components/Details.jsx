@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Details = ({ details, }) => {
+const Details = ({ details, handleAdd,}) => {
     return (
         <React.Fragment>
             <div className="container">
@@ -22,7 +22,8 @@ const Details = ({ details, }) => {
                             <div className="text-left">
                                 <p>{details.info}</p>
                             </div>
-
+                            <button className="myButton yellow" onClick={() => handleAdd(details)}>Add to Cart</button>
+                            <Link to="/"><button className="myButton">Return to products</button></Link>
                         </div>
                     </div>
 }

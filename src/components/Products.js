@@ -24,7 +24,7 @@ const Products = ({ handleAdd, showDetails }) => {
                         </Link>
 
                         <div className="position-absolute bottom-0 left-0">
-                            <button className="myButton " onClick={() => handleAdd(product)}>Add</button>
+                            <button className="myButton " onClick={() => {handleAdd(product); console.log("Modal to be created")}}>Add</button>
                         </div></div>
                 ))}
             </div>

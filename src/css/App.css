@@ -95,6 +95,15 @@ nav button:focus {
   color: #2a2a72;
 }
 
+.yellow {
+  border: 0.1rem solid #ffa400;
+  color: #ffa400;
+}
+
+.yellow:hover {
+  border: #009ffd;
+}
+
 .no-border {
   border: none;
 }
