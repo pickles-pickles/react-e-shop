@@ -10,7 +10,7 @@ const Modal = ({ isModalOpen, setIsModalOpen, modalProduct }) => {
                             <div id="modal-inner" className="col-8 mx-auto py-2 col-md-6 col-lg-4
                     text-center text-capitalize">
                                 <h5>item added to cart</h5>
-                                <img src={modalProduct.img} alt="product" />
+                                <img src={modalProduct.img} alt="product" style={{maxWidth: "90%" }} />
                                 <h5>{modalProduct.title}</h5>
                                 <button className="myButton" onClick={()=> {setIsModalOpen(false)}} >Continue shopping</button>
                             </div>
