@@ -25,7 +25,7 @@ const Products = ({ handleAdd, showDetails, setIsModalOpen, modalProduct, handle
 
                         <div className="position-absolute bottom-0 left-0">
                             <button className="myButton " 
-                            onClick={() => { handleAdd(product); console.log("Modal to be created"); setIsModalOpen(true);
+                            onClick={() => { handleAdd(product); setIsModalOpen(true);
                         handleModalAdd(product); }}
                             >Add</button>
                         </div></div>

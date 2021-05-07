@@ -50,7 +50,8 @@ const [modalProduct, setModalProduct] = useState({});
               <Cart setCartItems={setCartItems} cartItems={cartItems} />
               </Route>
               <Route path="/details">
-              <Details details={details} handleAdd={(details) => handleAdd(details)} handleModalAdd={handleModalAdd}/>
+              <Details details={details} handleAdd={(details) => handleAdd(details)} handleModalAdd={(details) => handleModalAdd(details)}
+               setIsModalOpen={setIsModalOpen}/>
               </Route>
           </Switch>
               <Modal isModalOpen={isModalOpen} modalProduct={modalProduct} setIsModalOpen={setIsModalOpen} />
