@@ -5,7 +5,8 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Cart from './components/Cart';
 import Products from './components/Products';
-import Details from './components/Details.jsx';
+import Details from './components/Details';
+import Modal from './components/Modal';
 import { ProductProvider } from './context';
 
 
@@ -18,10 +19,18 @@ function App() {
     setDetails(
         product
     )
-}
+};
+
+const [isModalOpen, setIsModalOpen] = useState(false);
+const [modalProduct, setModalProduct] = useState({});
 
   const handleAdd = (product) => {
     setCartItems([...cartItems, { ...product },]);
+  };
+
+  const handleModalAdd = (product) => {
+    setModalProduct(product);
+    console.log(product);
   };
 
   return (
@@ -33,16 +42,18 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Products handleAdd={(product) => handleAdd(product)}
-                        showDetails={(product) => showDetails(product)} />
+                        showDetails={(product) => showDetails(product)}
+                        setIsModalOpen={setIsModalOpen}
+                        modalProduct={modalProduct} handleModalAdd={(product) => handleModalAdd(product)} />
             </Route>
             <Route path="/cart">
               <Cart setCartItems={setCartItems} cartItems={cartItems} />
               </Route>
               <Route path="/details">
-              <Details details={details} handleAdd={(details) => handleAdd(details)}/>
+              <Details details={details} handleAdd={(details) => handleAdd(details)} handleModalAdd={handleModalAdd}/>
               </Route>
           </Switch>
-
+              <Modal isModalOpen={isModalOpen} modalProduct={modalProduct} setIsModalOpen={setIsModalOpen} />
         </Router>
       </ProductProvider>
 

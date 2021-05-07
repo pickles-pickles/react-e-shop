@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import storeProducts from '../data';
 import Product from './Product';
-const Products = ({ handleAdd, showDetails }) => {
+const Products = ({ handleAdd, showDetails, setIsModalOpen, modalProduct, handleModalAdd }) => {
 
     return (
         <div className="container">
@@ -24,7 +24,10 @@ const Products = ({ handleAdd, showDetails }) => {
                         </Link>
 
                         <div className="position-absolute bottom-0 left-0">
-                            <button className="myButton " onClick={() => {handleAdd(product); console.log("Modal to be created")}}>Add</button>
+                            <button className="myButton " 
+                            onClick={() => { handleAdd(product); console.log("Modal to be created"); setIsModalOpen(true);
+                        handleModalAdd(product); }}
+                            >Add</button>
                         </div></div>
                 ))}
             </div>
