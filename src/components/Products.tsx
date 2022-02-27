@@ -20,13 +20,13 @@ const Products = ({
   return (
     <div className='container'>
       <div className=' row justify-content-center my-2'>
-        <h1>This is MainPage (Products)</h1>
+        <h1>This is HomePage (Products)</h1>
       </div>
 
       <div className='row justify-content-center mb-2'>
         {storeProducts.map(product => (
           <div key={product.id} className='card m-1 position-relative'>
-            <Link to='/details'>
+            <Link to='/details' style={{ color: 'rgb(42, 114, 42)' }}>
               <div className='' onClick={() => showDetails(product)}>
                 <Product
                   title={product.title}

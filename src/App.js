@@ -7,7 +7,7 @@ import Cart from './components/Cart'
 import Products from './components/Products'
 import Details from './components/Details'
 import Checkout from './components/Checkout'
-import Modal from './components/Modal'
+import Modal from './components/modals/Modal'
 //import { ProductProvider } from './context'
 
 function App () {

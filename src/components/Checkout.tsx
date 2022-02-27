@@ -1,6 +1,6 @@
 import { db } from '../utils/firebase'
 import { collection, addDoc } from 'firebase/firestore'
-import CheckoutModal from './CheckoutModal'
+import CheckoutModal from './modals/CheckoutModal'
 import { ProductType } from '../types/productType'
 
 type Props = {
@@ -26,11 +26,11 @@ const Checkout = ({
 
   return (
     <>
-      <div className=' d-flex justify-content-center'>
+      <div className=' d-flex justify-content-center text-center'>
         <h1>You are about to buy your products</h1>
       </div>
       <div className=' d-flex justify-content-center'>
-        <table className='col-6 table table-striped'>
+        <table className='col-8 col-md-6 table table-striped'>
           <thead>
             {/* <tr>
               <th>My Order</th>
@@ -57,7 +57,6 @@ const Checkout = ({
         <button
           className='myButton'
           onClick={() => {
-            console.log('Order sent to database')
             saveMessage(cartItems)
             setIsCheckoutModalOpen(true)
             setCartItems([])

@@ -9,16 +9,16 @@ body {
   letter-spacing: 0.3rem;
 }
 
-.text-blue {
-  color: #2a2a72;
+.text-green {
+  color: #2a722a;
 }
 
 .text-bright {
-  color: #009ffd;
+  color: #00c19f;
 }
 
 nav {
-  background: #2a2a72 !important;
+  background: #2a722a !important;
 }
 
 nav .nav-link {
@@ -31,8 +31,8 @@ nav button {
   text-transform: capitalize;
   font-size: 1.43rem;
   background: transparent;
-  border: 0.1rem solid #009ffd;
-  color: #009ffd;
+  border: 0.1rem solid #00c19f;
+  color: #00c19f;
   border-radius: 0.5rem;
   cursor: pointer;
   margin: 0.2rem 0.5rem 0.2rem 0;
@@ -41,8 +41,8 @@ nav button {
 }
 
 nav button:hover {
-  background: #009ffd;
-  color: #2a2a72;
+  background: #00c19f;
+  color: #2a722a;
 }
 
 nav button:focus {
@@ -81,8 +81,8 @@ nav button:focus {
   text-transform: capitalize;
   font-size: 1.43rem;
   background: transparent;
-  border: 0.1rem solid #009ffd;
-  color: #009ffd;
+  border: 0.1rem solid #00c19f;
+  color: #00c19f;
   border-radius: 0.5rem;
   cursor: pointer;
   margin: 0.2rem 0.5rem 0.2rem 0;
@@ -91,8 +91,8 @@ nav button:focus {
 }
 
 .myButton:hover {
-  background: #009ffd;
-  color: #2a2a72;
+  background: #00c19f;
+  color: #2a722a;
 }
 
 .yellow {
@@ -101,7 +101,7 @@ nav button:focus {
 }
 
 .yellow:hover {
-  border: #009ffd;
+  border: #00c19f;
 }
 
 .no-border {

@@ -13,7 +13,7 @@ const Product = ({ title, price, img }: Props) => {
         <img src={img} alt='product' className='card-img-top p-2'></img>
       </div>
       <h4 className='mx-4'>{title}</h4>
-      <p className='mx-4'>{price} $</p>
+      <p className='mx-4'>{price} &euro;</p>
     </div>
   )
 }
