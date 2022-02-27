@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Cart from './components/Cart'
 import Products from './components/Products'
 import Details from './components/Details'
+import Checkout from './components/Checkout'
 import Modal from './components/Modal'
 //import { ProductProvider } from './context'
 
@@ -54,6 +55,9 @@ function App () {
               handleModalAdd={details => handleModalAdd(details)}
               setIsModalOpen={setIsModalOpen}
             />
+          </Route>
+          <Route path='/checkout'>
+            <Checkout cartItems={cartItems}></Checkout>
           </Route>
         </Switch>
         <Modal

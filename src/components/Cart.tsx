@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import { ProductType } from '../types/productType'
 
 type Props = {
@@ -13,6 +13,20 @@ const Cart = ({ cartItems, setCartItems }: Props) => {
 
   return (
     <>
+      {/* buttons */}
+      {cartItems.length === 0 ? null : (
+        <div className='row justify-content-center mt-5 mb-5'>
+          <Link to='/checkout'>
+            {' '}
+            <button className='myButton yellow'>Checkout</button>
+          </Link>
+
+          <Link to='/'>
+            <button className='myButton'>Return to products</button>
+          </Link>
+        </div>
+      )}
+      {/* products in cart */}
       <div className='row justify-content-center '>
         {cartItems.length === 0 ? (
           <h1>Empty Cart</h1>
