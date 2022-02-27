@@ -1,6 +1,15 @@
-import React from 'react'
+import { db } from '../utils/firebase'
+import { collection, addDoc } from 'firebase/firestore'
 
 const Checkout = ({ cartItems }) => {
+  const saveMessage = async cartItems => {
+    try {
+      await addDoc(collection(db, 'products'), { cartItems: cartItems })
+    } catch (err) {
+      alert(err)
+    }
+  }
+
   return (
     <>
       <div className=' d-flex justify-content-center'>
@@ -33,7 +42,10 @@ const Checkout = ({ cartItems }) => {
       <div className='d-flex justify-content-center'>
         <button
           className='myButton'
-          onClick={() => console.log('Order sent to database')}
+          onClick={() => {
+            console.log('Order sent to database')
+            saveMessage(cartItems)
+          }}
         >
           Buy Products
         </button>
