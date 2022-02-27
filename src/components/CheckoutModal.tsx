@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const CheckoutModal = ({ isCheckoutModalOpen, setIsCheckoutModalOpen }) => {
+type Props = {
+  isCheckoutModalOpen: boolean
+  setIsCheckoutModalOpen: (isCheckoutModalOpen: boolean) => void
+}
+
+const CheckoutModal = ({
+  isCheckoutModalOpen,
+  setIsCheckoutModalOpen
+}: Props) => {
   return (
     <React.Fragment>
       {isCheckoutModalOpen ? (

@@ -1,14 +1,22 @@
 import { db } from '../utils/firebase'
 import { collection, addDoc } from 'firebase/firestore'
 import CheckoutModal from './CheckoutModal'
+import { ProductType } from '../types/productType'
+
+type Props = {
+  cartItems: ProductType[]
+  setCartItems: (cartItems: ProductType[]) => void
+  isCheckoutModalOpen: boolean
+  setIsCheckoutModalOpen: (isCheckoutModalOpen: boolean) => void
+}
 
 const Checkout = ({
   cartItems,
   setCartItems,
   isCheckoutModalOpen,
   setIsCheckoutModalOpen
-}) => {
-  const saveMessage = async cartItems => {
+}: Props) => {
+  const saveMessage = async (cartItems: ProductType[]) => {
     try {
       await addDoc(collection(db, 'products'), { cartItems: cartItems })
     } catch (err) {
