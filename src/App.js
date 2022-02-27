@@ -19,6 +19,7 @@ function App () {
   }
 
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false)
   const [modalProduct, setModalProduct] = useState({})
 
   const handleAdd = product => {
@@ -57,7 +58,12 @@ function App () {
             />
           </Route>
           <Route path='/checkout'>
-            <Checkout cartItems={cartItems}></Checkout>
+            <Checkout
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+              isCheckoutModalOpen={isCheckoutModalOpen}
+              setIsCheckoutModalOpen={setIsCheckoutModalOpen}
+            ></Checkout>
           </Route>
         </Switch>
         <Modal

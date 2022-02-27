@@ -1,7 +1,13 @@
 import { db } from '../utils/firebase'
 import { collection, addDoc } from 'firebase/firestore'
+import CheckoutModal from './CheckoutModal'
 
-const Checkout = ({ cartItems }) => {
+const Checkout = ({
+  cartItems,
+  setCartItems,
+  isCheckoutModalOpen,
+  setIsCheckoutModalOpen
+}) => {
   const saveMessage = async cartItems => {
     try {
       await addDoc(collection(db, 'products'), { cartItems: cartItems })
@@ -45,11 +51,17 @@ const Checkout = ({ cartItems }) => {
           onClick={() => {
             console.log('Order sent to database')
             saveMessage(cartItems)
+            setIsCheckoutModalOpen(true)
+            setCartItems([])
           }}
         >
           Buy Products
         </button>
       </div>
+      <CheckoutModal
+        isCheckoutModalOpen={isCheckoutModalOpen}
+        setIsCheckoutModalOpen={setIsCheckoutModalOpen}
+      ></CheckoutModal>
     </>
   )
 }

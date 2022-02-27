@@ -20,12 +20,11 @@ const Modal = ({ isModalOpen, setIsModalOpen, modalProduct }: Props) => {
   return (
     <React.Fragment>
       {isModalOpen ? (
-        <div id='modal'>
+        <div className='modal'>
           <div className='container'>
             <div className='row'>
               <div
-                id='modal-inner'
-                className='col-8 mx-auto py-2 col-md-6 col-lg-4
+                className='modal-inner col-8 mx-auto py-2 col-md-6 col-lg-4
                     text-center text-capitalize'
               >
                 <h5>item added to cart</h5>
