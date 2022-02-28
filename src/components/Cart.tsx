@@ -29,7 +29,7 @@ const Cart = ({ cartItems, setCartItems }: Props) => {
       {/* products in cart */}
       <div className='row justify-content-center '>
         {cartItems.length === 0 ? (
-          <h1>Empty Cart</h1>
+          <h1>Your Cart is Empty</h1>
         ) : (
           cartItems.map((product, idx) => (
             <div className='col-4' key={idx}>

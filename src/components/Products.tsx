@@ -19,37 +19,39 @@ const Products = ({
 }: Props) => {
   return (
     <div className='container'>
-      <div className=' row justify-content-center my-2'>
-        <h1>This is HomePage (Products)</h1>
-      </div>
+      <div>
+        <div className=' row justify-content-center my-2'>
+          <h1>This is HomePage (Products)</h1>
+        </div>
 
-      <div className='row justify-content-center mb-2'>
-        {storeProducts.map(product => (
-          <div key={product.id} className='card m-1 position-relative'>
-            <Link to='/details' style={{ color: 'rgb(42, 114, 42)' }}>
-              <div className='' onClick={() => showDetails(product)}>
-                <Product
-                  title={product.title}
-                  price={product.price}
-                  img={product.img}
-                />
+        <div className='row justify-content-center mb-2'>
+          {storeProducts.map(product => (
+            <div key={product.id} className='card m-1 position-relative'>
+              <Link to='/details' style={{ color: 'rgb(42, 114, 42)' }}>
+                <div className='' onClick={() => showDetails(product)}>
+                  <Product
+                    title={product.title}
+                    price={product.price}
+                    img={product.img}
+                  />
+                </div>
+              </Link>
+
+              <div className='position-absolute bottom-0 left-0'>
+                <button
+                  className='myButton '
+                  onClick={() => {
+                    handleAdd(product)
+                    setIsModalOpen(true)
+                    handleModalAdd(product)
+                  }}
+                >
+                  Add
+                </button>
               </div>
-            </Link>
-
-            <div className='position-absolute bottom-0 left-0'>
-              <button
-                className='myButton '
-                onClick={() => {
-                  handleAdd(product)
-                  setIsModalOpen(true)
-                  handleModalAdd(product)
-                }}
-              >
-                Add
-              </button>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )
