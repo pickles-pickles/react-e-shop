@@ -55,7 +55,7 @@ const Checkout = ({
       </div>
       <div className='d-flex justify-content-center'>
         <button
-          className='myButton'
+          className='myButton black'
           onClick={() => {
             saveMessage(cartItems)
             setIsCheckoutModalOpen(true)
