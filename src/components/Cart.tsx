@@ -1,15 +1,21 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { ProductType } from '../types/productType'
+import { removeFromCart } from '../myredux/productsSlice'
 
 type Props = {
-  cartItems: ProductType[]
+  /* cartItems: ProductType[] */
   setCartItems: (cartItems: ProductType[]) => void
 }
 
-const Cart = ({ cartItems, setCartItems }: Props) => {
-  const removeFromCart = (productToRemove: any) => {
-    setCartItems(cartItems.filter(product => product !== productToRemove))
-  }
+const Cart = ({ /* cartItems, */ setCartItems }: Props) => {
+  const cartItems = useSelector((state: any) => state.products.cartItems)
+  const dispatch: any = useDispatch()
+  /* const removeFromCart = (productToRemove: any) => {
+    setCartItems(
+      cartItems.filter((product: ProductType) => product !== productToRemove)
+    )
+  } */
 
   return (
     <>
@@ -31,7 +37,7 @@ const Cart = ({ cartItems, setCartItems }: Props) => {
         {cartItems.length === 0 ? (
           <h1>Your Cart is Empty</h1>
         ) : (
-          cartItems.map((product, idx) => (
+          cartItems.map((product: ProductType, idx: any) => (
             <div className='col-4' key={idx}>
               <div className='card mt-3'>
                 <img
@@ -43,7 +49,11 @@ const Cart = ({ cartItems, setCartItems }: Props) => {
                 <p className='mx-4'>{product.price} $</p>
                 <button
                   className='btn btn-warning'
-                  onClick={() => removeFromCart(product)}
+                  onClick={() => {
+                    dispatch(removeFromCart(product))
+                    console.log(cartItems)
+                    console.log('product: ', product)
+                  }}
                 >
                   Remove
                 </button>

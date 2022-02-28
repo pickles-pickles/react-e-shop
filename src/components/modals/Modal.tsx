@@ -1,15 +1,17 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleModal, handleProductModalAdd } from '../../myredux/productsSlice'
+import {
+  toggleModal /* handleProductModalAdd */
+} from '../../myredux/productsSlice'
 /* import RootState from '../../myredux/store' */
 /* import store from '../../myredux/store' */
 
 /* type RootState = {
   isModalOpen: boolean
 } */
-type Props = {
-  /* isModalOpen: boolean
-  setIsModalOpen: (isModalOpen: boolean) => void */
+/* type Props = {
+  isModalOpen: boolean
+  setIsModalOpen: (isModalOpen: boolean) => void
   modalProduct: {
     id: number
     title: string
@@ -21,7 +23,7 @@ type Props = {
     count: number
     total: number
   }
-}
+} */
 
 const Modal = (/* setIsModalOpen, */) =>
   /* { */

@@ -19,6 +19,11 @@ export const productsSlice = createSlice({
     },
     handleProductModalAdd: (state, action) => {
       state.modalProduct = { product: action.payload }
+    },
+    removeFromCart: (state, action) => {
+      state.cartItems = state.cartItems.filter(
+        product => product.id !== action.payload.id
+      )
     }
   }
 })
@@ -26,7 +31,8 @@ export const productsSlice = createSlice({
 export const {
   handleAdd,
   toggleModal,
-  handleProductModalAdd
+  handleProductModalAdd,
+  removeFromCart
 } = productsSlice.actions
 const productsSliceReducer = productsSlice.reducer
 export default productsSliceReducer
