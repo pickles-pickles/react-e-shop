@@ -92,10 +92,15 @@ nav {
 .yellow {
   border: 0.1rem solid $mainYellow;
   color: $mainYellow;
+  background: black;
 }
 
 .yellow:hover {
   border: $lightGreen;
+}
+
+.black {
+  background: black;
 }
 
 .no-border {

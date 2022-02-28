@@ -98,10 +98,15 @@ nav button:focus {
 .yellow {
   border: 0.1rem solid #ffa400;
   color: #ffa400;
+  background: black;
 }
 
 .yellow:hover {
   border: #00c19f;
+}
+
+.black {
+  background: black;
 }
 
 .no-border {

@@ -15,14 +15,14 @@ const Cart = ({ cartItems, setCartItems }: Props) => {
     <>
       {/* buttons */}
       {cartItems.length === 0 ? null : (
-        <div className='row justify-content-center mt-5 mb-5'>
+        <div className='row justify-content-center mt-5 mb-5 '>
           <Link to='/checkout'>
             {' '}
-            <button className='myButton yellow'>Checkout</button>
+            <button className='myButton yellow '>Checkout</button>
           </Link>
 
           <Link to='/'>
-            <button className='myButton'>Return to products</button>
+            <button className='myButton black'>Return to products</button>
           </Link>
         </div>
       )}
