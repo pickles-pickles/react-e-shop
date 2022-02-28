@@ -16,6 +16,7 @@ const Checkout = ({
   isCheckoutModalOpen,
   setIsCheckoutModalOpen
 }: Props) => {
+  /* send cart to database */
   const saveMessage = async (cartItems: ProductType[]) => {
     try {
       await addDoc(collection(db, 'products'), { cartItems: cartItems })
