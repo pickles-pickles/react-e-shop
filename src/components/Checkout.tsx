@@ -2,20 +2,27 @@ import { db } from '../utils/firebase'
 import { collection, addDoc } from 'firebase/firestore'
 import CheckoutModal from './modals/CheckoutModal'
 import { ProductType } from '../types/productType'
+import { useSelector, useDispatch } from 'react-redux'
+import { emptyCart, toggleCheckoutModal } from '../myredux/productsSlice'
+import store from '../myredux/store'
 
-type Props = {
+/* type Props = {
   cartItems: ProductType[]
   setCartItems: (cartItems: ProductType[]) => void
   isCheckoutModalOpen: boolean
   setIsCheckoutModalOpen: (isCheckoutModalOpen: boolean) => void
-}
+} */
 
-const Checkout = ({
+const Checkout = (/* {
   cartItems,
   setCartItems,
   isCheckoutModalOpen,
   setIsCheckoutModalOpen
-}: Props) => {
+}: Props */) => {
+  const cartItems = useSelector((state: any) => state.products.cartItems)
+
+  const dispatch: any = useDispatch()
+
   /* send cart to database */
   const saveMessage = async (cartItems: ProductType[]) => {
     try {
@@ -45,7 +52,7 @@ const Checkout = ({
           {/* table with products */}
 
           <tbody>
-            {cartItems.map((product, key = product.id) => (
+            {cartItems.map((product: ProductType, key = product.id) => (
               <tr key={key}>
                 <td>{product.title}</td>
                 <td>{product.price}</td>
@@ -59,16 +66,18 @@ const Checkout = ({
           className='myButton black'
           onClick={() => {
             saveMessage(cartItems)
-            setIsCheckoutModalOpen(true)
-            setCartItems([])
+            console.log('cart items submitted', cartItems)
+            dispatch(toggleCheckoutModal())
+            console.log('isChoutModalOpen: ', store.getState())
+            dispatch(emptyCart())
           }}
         >
           Buy Products
         </button>
       </div>
       <CheckoutModal
-        isCheckoutModalOpen={isCheckoutModalOpen}
-        setIsCheckoutModalOpen={setIsCheckoutModalOpen}
+      /* isCheckoutModalOpen={isCheckoutModalOpen}
+        setIsCheckoutModalOpen={setIsCheckoutModalOpen} */
       ></CheckoutModal>
     </>
   )

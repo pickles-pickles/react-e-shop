@@ -5,7 +5,8 @@ const initialState = {
   storeProducts,
   cartItems: [],
   isModalOpen: false,
-  modalProduct: {}
+  modalProduct: {},
+  isCheckoutModalOpen: false
 }
 export const productsSlice = createSlice({
   name: 'products',
@@ -24,6 +25,12 @@ export const productsSlice = createSlice({
       state.cartItems = state.cartItems.filter(
         product => product.id !== action.payload.id
       )
+    },
+    emptyCart: state => {
+      state.cartItems = []
+    },
+    toggleCheckoutModal: state => {
+      state.isCheckoutModalOpen = !state.isCheckoutModalOpen
     }
   }
 })
@@ -32,7 +39,9 @@ export const {
   handleAdd,
   toggleModal,
   handleProductModalAdd,
-  removeFromCart
+  removeFromCart,
+  emptyCart,
+  toggleCheckoutModal
 } = productsSlice.actions
 const productsSliceReducer = productsSlice.reducer
 export default productsSliceReducer

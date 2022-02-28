@@ -55,7 +55,6 @@ const Modal = (/* setIsModalOpen, */) =>
                     className='myButton'
                     onClick={() => {
                       dispatch(toggleModal())
-                      console.log('modal product: ', modalProduct)
                     }}
                   >
                     Continue shopping
