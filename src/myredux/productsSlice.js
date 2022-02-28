@@ -14,8 +14,8 @@ export const productsSlice = createSlice({
     handleAdd: (state, action) => {
       state.cartItems = [...state.cartItems, action.payload]
     },
-    toggleModal: (state, action) => {
-      state.isModalOpen = true
+    toggleModal: state => {
+      state.isModalOpen = !state.isModalOpen
     },
     handleProductModalAdd: (state, action) => {
       state.modalProduct = { product: action.payload }

@@ -3,20 +3,29 @@ import { Link } from 'react-router-dom'
 import storeProducts from '../data'
 import Product from './Product'
 import { ProductType } from '../types/productType'
+import { useDispatch } from 'react-redux'
+import {
+  handleAdd,
+  toggleModal,
+  handleProductModalAdd
+} from '../myredux/productsSlice'
+import store from '../myredux/store'
 
 type Props = {
-  handleAdd: (product: ProductType) => void
+  /* handleAdd: (product: ProductType) => void */
   showDetails: (product: ProductType) => void
-  setIsModalOpen: (isModalOpen: boolean) => void
-  handleModalAdd: (product: ProductType) => void
+  /* setIsModalOpen: (isModalOpen: boolean) => void
+  handleModalAdd: (product: ProductType) => void */
 }
 
 const Products = ({
-  handleAdd,
-  showDetails,
-  setIsModalOpen,
-  handleModalAdd
-}: Props) => {
+  /* handleAdd, */
+  showDetails
+}: /*  setIsModalOpen,
+  handleModalAdd */
+Props) => {
+  const dispatch: any = useDispatch()
+
   return (
     <div className='container'>
       <div>
@@ -41,9 +50,13 @@ const Products = ({
                 <button
                   className='myButton '
                   onClick={() => {
-                    handleAdd(product)
+                    dispatch(handleAdd(product))
+                    dispatch(toggleModal())
+                    dispatch(handleProductModalAdd(product))
+                    console.log('state must be changed: ', store.getState())
+                    /*  handleAdd(product)
                     setIsModalOpen(true)
-                    handleModalAdd(product)
+                    handleModalAdd(product) */
                   }}
                 >
                   Add
