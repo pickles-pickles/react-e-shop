@@ -139,4 +139,20 @@ nav button:focus {
   background: white;
   border-radius: 4px;
 }
+
+.modal .modal-inner .count-btn {
+  width: 2.2rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
 /*# sourceMappingURL=App.css.map */

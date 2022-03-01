@@ -35,6 +35,18 @@ export const productsSlice = createSlice({
     },
     showDetails: (state, action) => {
       state.detailsProduct = action.payload
+    },
+    increaseCount: state => {
+      state.modalProduct = {
+        ...state.modalProduct,
+        count: state.modalProduct.count + 1
+      }
+    },
+    decreaseCount: state => {
+      state.modalProduct = {
+        ...state.modalProduct,
+        count: state.modalProduct.count - 1
+      }
     }
   }
 })
@@ -46,7 +58,9 @@ export const {
   removeFromCart,
   emptyCart,
   toggleCheckoutModal,
-  showDetails
+  showDetails,
+  increaseCount,
+  decreaseCount
 } = productsSlice.actions
 const productsSliceReducer = productsSlice.reducer
 export default productsSliceReducer

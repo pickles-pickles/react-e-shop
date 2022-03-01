@@ -1,5 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleModal } from '../../myredux/productsSlice'
+import {
+  toggleModal,
+  increaseCount,
+  decreaseCount,
+  handleAdd
+} from '../../myredux/productsSlice'
 import StateType from '../../types/stateType'
 
 const Modal = () => {
@@ -9,6 +14,9 @@ const Modal = () => {
   )
   const modalProduct = useSelector(
     (state: StateType) => state.products.modalProduct
+  )
+  const count = useSelector(
+    (state: StateType) => state.products.modalProduct.count
   )
   return (
     <>
@@ -20,13 +28,46 @@ const Modal = () => {
                 className='modal-inner col-8 mx-auto py-2 col-md-6 col-lg-4
                     text-center text-capitalize'
               >
-                <h5>item added to cart</h5>
+                <h5>item {/* added to cart */} selected</h5>
                 <img
                   src={modalProduct.img}
                   alt='product'
                   style={{ maxWidth: '90%' }}
                 />
                 <h5>{modalProduct.title}</h5>
+                <div className='d-flex justify-content-center'>
+                  <button
+                    className='btn btn-sm count-btn text-white black mr-4'
+                    onClick={() => {
+                      dispatch(increaseCount())
+                    }}
+                  >
+                    +
+                  </button>
+                  <span>
+                    <p className='border-bottom border-dark'>{count}</p>
+                  </span>
+
+                  <button
+                    className=' btn btn-sm count-btn text-white black ml-4'
+                    onClick={() => {
+                      dispatch(decreaseCount())
+                    }}
+                    disabled={count === 0 ? true : false}
+                  >
+                    -
+                  </button>
+                </div>
+                <button
+                  className='myButton'
+                  onClick={() => {
+                    dispatch(toggleModal())
+                    dispatch(handleAdd(modalProduct))
+                    console.log(modalProduct)
+                  }}
+                >
+                  Add to Cart
+                </button>
                 <button
                   className='myButton'
                   onClick={() => {

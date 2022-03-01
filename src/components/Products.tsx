@@ -3,7 +3,6 @@ import storeProducts from '../data'
 import Product from './Product'
 import { useDispatch } from 'react-redux'
 import {
-  handleAdd,
   toggleModal,
   handleProductModalAdd,
   showDetails
@@ -43,7 +42,6 @@ const Products = () => {
                 <button
                   className='myButton '
                   onClick={() => {
-                    dispatch(handleAdd(product))
                     dispatch(toggleModal())
                     dispatch(handleProductModalAdd(product))
                     console.log('state must be changed: ', store.getState())
