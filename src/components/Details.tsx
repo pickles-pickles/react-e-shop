@@ -8,12 +8,12 @@ import {
 } from '../myredux/productsSlice'
 /* import { ProductType } from '../types/productType' */
 
-type Props = {
-  /* details: any */
-  /* handleAdd: (product: ProductType) => void */
-  /* handleModalAdd: (product: ProductType) => void
+/* type Props = { */
+/* details: any */
+/* handleAdd: (product: ProductType) => void */
+/* handleModalAdd: (product: ProductType) => void
   setIsModalOpen: (isModalOpen: boolean) => void */
-}
+/* } */
 
 const Details = (/* {
   details

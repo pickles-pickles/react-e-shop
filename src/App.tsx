@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React /* , { useState } */ from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './css/App.css'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
@@ -8,27 +8,28 @@ import Products from './components/Products'
 import Details from './components/Details'
 import Checkout from './components/Checkout'
 import Modal from './components/modals/Modal'
+/* import { ProductType } from './types/productType' */
 //import { ProductProvider } from './context'
 
 function App () {
-  const [cartItems, setCartItems] = useState([])
+  /* const [cartItems, setCartItems] = useState([])
 
   const [details, setDetails] = useState({})
-  const showDetails = product => {
+  const showDetails = (product: ProductType) => {
     setDetails(product)
   }
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false)
-  const [modalProduct, setModalProduct] = useState({})
+  const [modalProduct, setModalProduct] = useState({}) */
 
-  const handleAdd = product => {
+  /* const handleAdd = (product: ProductType) => {
     setCartItems([...cartItems, { ...product }])
   }
 
   const handleModalAdd = product => {
     setModalProduct(product)
-  }
+  } */
 
   return (
     <React.Fragment>
@@ -39,37 +40,37 @@ function App () {
         <Switch>
           <Route exact path='/'>
             <Products
-              handleAdd={product => handleAdd(product)}
+            /* handleAdd={product => handleAdd(product)}
               showDetails={product => showDetails(product)}
               setIsModalOpen={setIsModalOpen}
               modalProduct={modalProduct}
-              handleModalAdd={product => handleModalAdd(product)}
+              handleModalAdd={product => handleModalAdd(product)} */
             />
           </Route>
           <Route path='/cart'>
-            <Cart setCartItems={setCartItems} cartItems={cartItems} />
+            <Cart /* setCartItems={setCartItems} cartItems={cartItems} */ />
           </Route>
           <Route path='/details'>
             <Details
-              details={details}
+            /* details={details}
               handleAdd={details => handleAdd(details)}
               handleModalAdd={details => handleModalAdd(details)}
-              setIsModalOpen={setIsModalOpen}
+              setIsModalOpen={setIsModalOpen} */
             />
           </Route>
           <Route path='/checkout'>
             <Checkout
-              cartItems={cartItems}
+            /* cartItems={cartItems}
               setCartItems={setCartItems}
               isCheckoutModalOpen={isCheckoutModalOpen}
-              setIsCheckoutModalOpen={setIsCheckoutModalOpen}
+              setIsCheckoutModalOpen={setIsCheckoutModalOpen} */
             ></Checkout>
           </Route>
         </Switch>
         <Modal
-          isModalOpen={isModalOpen}
+        /* isModalOpen={isModalOpen}
           modalProduct={modalProduct}
-          setIsModalOpen={setIsModalOpen}
+          setIsModalOpen={setIsModalOpen} */
         />
       </Router>
       {/*  </ProductProvider> */}

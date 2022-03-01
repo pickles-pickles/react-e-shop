@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import storeProducts from '../data'
 import Product from './Product'
-import { ProductType } from '../types/productType'
+/* import { ProductType } from '../types/productType' */
 import { useDispatch } from 'react-redux'
 import {
   handleAdd,
