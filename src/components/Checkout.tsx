@@ -5,21 +5,10 @@ import { ProductType } from '../types/productType'
 import { useSelector, useDispatch } from 'react-redux'
 import { emptyCart, toggleCheckoutModal } from '../myredux/productsSlice'
 import store from '../myredux/store'
+import StateType from '../types/stateType'
 
-/* type Props = {
-  cartItems: ProductType[]
-  setCartItems: (cartItems: ProductType[]) => void
-  isCheckoutModalOpen: boolean
-  setIsCheckoutModalOpen: (isCheckoutModalOpen: boolean) => void
-} */
-
-const Checkout = (/* {
-  cartItems,
-  setCartItems,
-  isCheckoutModalOpen,
-  setIsCheckoutModalOpen
-}: Props */) => {
-  const cartItems = useSelector((state: any) => state.products.cartItems)
+const Checkout = () => {
+  const cartItems = useSelector((state: StateType) => state.products.cartItems)
 
   const dispatch: any = useDispatch()
 
@@ -40,9 +29,6 @@ const Checkout = (/* {
       <div className=' d-flex justify-content-center'>
         <table className='col-8 col-md-6 table table-striped'>
           <thead>
-            {/* <tr>
-              <th>My Order</th>
-            </tr> */}
             <tr>
               <th>Product</th>
               <th>Price(&euro;)</th>
@@ -75,10 +61,7 @@ const Checkout = (/* {
           Buy Products
         </button>
       </div>
-      <CheckoutModal
-      /* isCheckoutModalOpen={isCheckoutModalOpen}
-        setIsCheckoutModalOpen={setIsCheckoutModalOpen} */
-      ></CheckoutModal>
+      <CheckoutModal></CheckoutModal>
     </>
   )
 }

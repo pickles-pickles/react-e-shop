@@ -20,7 +20,7 @@ export const productsSlice = createSlice({
       state.isModalOpen = !state.isModalOpen
     },
     handleProductModalAdd: (state, action) => {
-      state.modalProduct = { product: action.payload }
+      state.modalProduct = action.payload
     },
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(
