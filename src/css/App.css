@@ -74,8 +74,8 @@ nav button:focus {
   }
 } */
 .card-an {
-  -webkit-animation: an 3s;
-          animation: an 3s;
+  -webkit-animation: an 2.5s;
+          animation: an 2.5s;
 }
 
 @-webkit-keyframes an {
@@ -199,6 +199,12 @@ nav button:focus {
           justify-content: center;
   border-radius: 8px;
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  #products-page-tile {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 767px) {

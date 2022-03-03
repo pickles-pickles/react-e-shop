@@ -45,7 +45,7 @@ const Modal = () => {
                     +
                   </button>
                   <span>
-                    <p className='border-bottom border-dark'>{count}</p>
+                    <p className='border-bottom border-dark'>{count + 1}</p>
                   </span>
 
                   <button

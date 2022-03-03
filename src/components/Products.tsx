@@ -22,12 +22,13 @@ const Products = () => {
     }, 5000)
 
     console.log('from use effect onLoadAn is', onLoadAn)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onLoadAn])
 
   return (
     <div className='container bg-an'>
       <div className=' row justify-content-center my-2'>
-        <h1>This is HomePage (Products)</h1>
+        <h1 id='products-page-tile'>This is HomePage (Products)</h1>
       </div>
 
       <div className=' products-stage row justify-content-center mb-2'>
