@@ -1,19 +1,31 @@
 import { Link } from 'react-router-dom'
 import storeProducts from '../data'
 import Product from './Product'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   toggleModal,
   handleProductModalAdd,
-  showDetails
+  showDetails,
+  toggleOnLoadAn
 } from '../myredux/productsSlice'
 import store from '../myredux/store'
+import StateType from '../types/stateType'
+import { useEffect } from 'react'
 
 const Products = () => {
   const dispatch: any = useDispatch()
+  const onLoadAn = useSelector((state: StateType) => state.products.onLoadAn)
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(toggleOnLoadAn())
+    }, 5000)
+
+    console.log('from use effect onLoadAn is', onLoadAn)
+  }, [onLoadAn])
 
   return (
-    <div className='container'>
+    <div className='container bg-an'>
       <div className=' row justify-content-center my-2'>
         <h1>This is HomePage (Products)</h1>
       </div>
@@ -23,7 +35,9 @@ const Products = () => {
           /* product card */
           <div
             key={product.id}
-            className='card m-1 position-relative col-10 col-md-3 col-lg-3 col-xl-2'
+            className={` card ${
+              onLoadAn ? 'card-an' : null
+            } m-1 position-relative col-10 col-md-3 col-lg-3 col-xl-2 `}
           >
             <Link to='/details' style={{ color: 'rgb(42, 114, 42)' }}>
               <div
@@ -41,7 +55,7 @@ const Products = () => {
               </div>
             </Link>
 
-            <div className='position-absolute bottom-0 left-0'>
+            <div className='card-an position-absolute bottom-0 left-0'>
               <button
                 className='myButton '
                 onClick={() => {

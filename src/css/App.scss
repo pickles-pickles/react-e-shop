@@ -1,12 +1,12 @@
 $mainGreen: rgb(42, 114, 42);
 $lightGreen: rgb(0, 193, 159);
-$mainRed: #c5232359;
+$mainBg: #e2e2e2;
 $mainDark: #232528;
 $mainYellow: #ffa400;
 
 body {
   font-family: 'Oswald', sans-serif !important;
-  background: $mainRed;
+  background: $mainBg;
   color: $mainDark;
 }
 
@@ -30,7 +30,7 @@ body {
 nav {
   background: $mainGreen !important;
   .nav-link {
-    color: $mainRed;
+    color: $mainBg;
     font-size: 1.3rem;
     text-transform: capitalize;
   }
@@ -57,6 +57,33 @@ nav {
 .card {
   border: transparent;
   transition: border 0.5s linear, box-shadow 0.5s linear;
+}
+
+/* .bg-an {
+  animation: bg-an 0.5s;
+}
+
+@keyframes bg-an {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: black;
+  }
+} */
+
+.card-an {
+  animation: an 3s;
+}
+@keyframes an {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 1000px;
+  }
 }
 .card:hover {
   border: 0.04rem solid rgba($color: #000000, $alpha: 0.2);

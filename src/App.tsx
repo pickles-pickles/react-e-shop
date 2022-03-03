@@ -10,6 +10,13 @@ import Checkout from './components/Checkout'
 import Modal from './components/modals/Modal'
 
 function App () {
+  /* const [onLoadAn, setOnLoadAn] = useState(true)
+
+  useEffect(() => {
+    setOnLoadAn(false)
+    console.log('anime value loaded is ', onLoadAn)
+  }, [onLoadAn]) */
+
   return (
     <React.Fragment>
       <Router>

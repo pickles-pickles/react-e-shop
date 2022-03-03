@@ -8,6 +8,7 @@ type StateType = {
     modalProduct: ProductType
     isCheckoutModalOpen: boolean
     detailsProduct: ProductType
+    onLoadAn: boolean
   }
 }
 

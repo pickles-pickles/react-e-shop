@@ -7,7 +7,8 @@ const initialState = {
   isModalOpen: false,
   modalProduct: {},
   isCheckoutModalOpen: false,
-  detailsProduct: {}
+  detailsProduct: {},
+  onLoadAn: true
 }
 export const productsSlice = createSlice({
   name: 'products',
@@ -47,6 +48,9 @@ export const productsSlice = createSlice({
         ...state.modalProduct,
         count: state.modalProduct.count - 1
       }
+    },
+    toggleOnLoadAn: state => {
+      state.onLoadAn = false
     }
   }
 })
@@ -60,7 +64,8 @@ export const {
   toggleCheckoutModal,
   showDetails,
   increaseCount,
-  decreaseCount
+  decreaseCount,
+  toggleOnLoadAn
 } = productsSlice.actions
 const productsSliceReducer = productsSlice.reducer
 export default productsSliceReducer
