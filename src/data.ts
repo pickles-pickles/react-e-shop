@@ -8,7 +8,7 @@ import { ProductType } from './types/productType'
 const storeProducts: ProductType[] = [
   {
     id: 1,
-    title: 'Realme GT 5G',
+    title: 'Realme GT 5G - Voyager Grey',
     img: 'img/product-1.jpg',
     price: 310,
     company: 'REALME',

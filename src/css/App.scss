@@ -10,6 +10,10 @@ body {
   color: $mainDark;
 }
 
+.container {
+  max-width: 100%;
+}
+
 .text-title {
   font-family: 'Permanent Marker', cursive;
   letter-spacing: 0.3rem;
@@ -134,5 +138,14 @@ nav {
       border-radius: 8px;
       font-size: 1.5rem;
     }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .product-main h4 {
+    font-size: 1.4rem;
+  }
+  .product-main p {
+    font-size: 0.9rem;
   }
 }

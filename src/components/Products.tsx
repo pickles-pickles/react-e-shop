@@ -14,45 +14,46 @@ const Products = () => {
 
   return (
     <div className='container'>
-      <div>
-        <div className=' row justify-content-center my-2'>
-          <h1>This is HomePage (Products)</h1>
-        </div>
+      <div className=' row justify-content-center my-2'>
+        <h1>This is HomePage (Products)</h1>
+      </div>
 
-        <div className='row justify-content-center mb-2'>
-          {storeProducts.map(product => (
-            <div key={product.id} className='card m-1 position-relative'>
-              <Link to='/details' style={{ color: 'rgb(42, 114, 42)' }}>
-                <div
-                  className=''
-                  onClick={() => {
-                    dispatch(showDetails(product))
-                    console.log(product)
-                  }}
-                >
-                  <Product
-                    title={product.title}
-                    price={product.price}
-                    img={product.img}
-                  />
-                </div>
-              </Link>
-
-              <div className='position-absolute bottom-0 left-0'>
-                <button
-                  className='myButton '
-                  onClick={() => {
-                    dispatch(toggleModal())
-                    dispatch(handleProductModalAdd(product))
-                    console.log('state must be changed: ', store.getState())
-                  }}
-                >
-                  Add
-                </button>
+      <div className='row justify-content-center mb-2'>
+        {storeProducts.map(product => (
+          <div
+            key={product.id}
+            className='card m-1 position-relative col-10 col-md-3 col-lg-3 col-xl-2'
+          >
+            <Link to='/details' style={{ color: 'rgb(42, 114, 42)' }}>
+              <div
+                className=''
+                onClick={() => {
+                  dispatch(showDetails(product))
+                  console.log(product)
+                }}
+              >
+                <Product
+                  title={product.title}
+                  price={product.price}
+                  img={product.img}
+                />
               </div>
+            </Link>
+
+            <div className='position-absolute bottom-0 left-0'>
+              <button
+                className='myButton '
+                onClick={() => {
+                  dispatch(toggleModal())
+                  dispatch(handleProductModalAdd(product))
+                  console.log('state must be changed: ', store.getState())
+                }}
+              >
+                Add
+              </button>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   )
