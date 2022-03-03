@@ -11,8 +11,8 @@ const Product = ({ title, price, img }: Props) => {
         <img src={img} alt='product' className='card-img-top p-2'></img>
       </div>
       <div className='product-main'>
-        <h4 className='mx-2 mx-md-0 mx-lg-4 '>{title}</h4>
-        <p className='mx-2 mx-md-0 mx-lg-4'>{price} &euro;</p>
+        <h4 className='mx-2 mx-md-0 mx-lg-3 '>{title}</h4>
+        <p className='mx-2 mx-md-0 mx-lg-3'>{price} &euro;</p>
       </div>
     </div>
   )

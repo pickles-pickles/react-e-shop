@@ -18,8 +18,9 @@ const Products = () => {
         <h1>This is HomePage (Products)</h1>
       </div>
 
-      <div className='row justify-content-center mb-2'>
+      <div className=' products-stage row justify-content-center mb-2'>
         {storeProducts.map(product => (
+          /* product card */
           <div
             key={product.id}
             className='card m-1 position-relative col-10 col-md-3 col-lg-3 col-xl-2'

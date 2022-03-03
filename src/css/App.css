@@ -55,8 +55,10 @@ nav button:focus {
 
 .card {
   border: transparent;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+  -webkit-transition: border 0.5s linear, -webkit-box-shadow 0.5s linear;
+  transition: border 0.5s linear, -webkit-box-shadow 0.5s linear;
+  transition: border 0.5s linear, box-shadow 0.5s linear;
+  transition: border 0.5s linear, box-shadow 0.5s linear, -webkit-box-shadow 0.5s linear;
 }
 
 .card:hover {
