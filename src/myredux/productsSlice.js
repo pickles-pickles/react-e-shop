@@ -15,7 +15,19 @@ export const productsSlice = createSlice({
   initialState: initialState,
   reducers: {
     handleAdd: (state, action) => {
-      state.cartItems = [...state.cartItems, action.payload]
+      var flagIndx = -1
+
+      /* loop in the cart products */
+      for (let i = 0; i < state.cartItems.length; i++) {
+        /*  if product already in cart, raise count */
+        if (state.cartItems[i].id === action.payload.id) {
+          state.cartItems[i].count += action.payload.count
+          flagIndx = i
+        }
+      }
+      if (flagIndx === -1) {
+        state.cartItems = [...state.cartItems, action.payload]
+      }
     },
     toggleModal: state => {
       state.isModalOpen = !state.isModalOpen
@@ -49,6 +61,12 @@ export const productsSlice = createSlice({
         count: state.modalProduct.count - 1
       }
     },
+    zeroCount: state => {
+      state.modalProduct = {
+        ...state.modalProduct,
+        count: 0
+      }
+    },
     toggleOnLoadAn: state => {
       state.onLoadAn = false
     }
@@ -65,6 +83,7 @@ export const {
   showDetails,
   increaseCount,
   decreaseCount,
+  zeroCount,
   toggleOnLoadAn
 } = productsSlice.actions
 const productsSliceReducer = productsSlice.reducer

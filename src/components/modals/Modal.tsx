@@ -3,7 +3,8 @@ import {
   toggleModal,
   increaseCount,
   decreaseCount,
-  handleAdd
+  handleAdd,
+  zeroCount
 } from '../../myredux/productsSlice'
 import StateType from '../../types/stateType'
 
@@ -45,7 +46,7 @@ const Modal = () => {
                     +
                   </button>
                   <span>
-                    <p className='border-bottom border-dark'>{count + 1}</p>
+                    <p className='border-bottom border-dark'>{count}</p>
                   </span>
 
                   <button
@@ -73,6 +74,7 @@ const Modal = () => {
                   onClick={() => {
                     dispatch(toggleModal())
                     console.log(modalProduct)
+                    dispatch(zeroCount())
                   }}
                 >
                   Continue shopping

@@ -29,8 +29,8 @@ const Cart = () => {
           <h1>Your Cart is Empty</h1>
         ) : (
           cartItems.map((product: ProductType, idx: any) => (
-            <div className='col-4' key={idx}>
-              <div className='card mt-3'>
+            <div className='col-4 ' key={idx}>
+              <div className='card mt-3 position-relative'>
                 <img
                   src={product.img}
                   alt='product'
@@ -48,6 +48,9 @@ const Cart = () => {
                 >
                   Remove
                 </button>
+                <div className='position-absolute top-0 right-0 black text-white rounded px-2 cart-card-count'>
+                  <p>{product.count} pieces</p>
+                </div>
               </div>
             </div>
           ))

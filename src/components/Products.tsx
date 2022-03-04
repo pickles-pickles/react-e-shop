@@ -6,7 +6,8 @@ import {
   toggleModal,
   handleProductModalAdd,
   showDetails,
-  toggleOnLoadAn
+  toggleOnLoadAn,
+  increaseCount
 } from '../myredux/productsSlice'
 import store from '../myredux/store'
 import StateType from '../types/stateType'
@@ -62,6 +63,7 @@ const Products = () => {
                 onClick={() => {
                   dispatch(toggleModal())
                   dispatch(handleProductModalAdd(product))
+                  dispatch(increaseCount())
                   console.log('state must be changed: ', store.getState())
                 }}
               >
