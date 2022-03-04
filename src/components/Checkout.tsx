@@ -32,6 +32,8 @@ const Checkout = () => {
             <tr>
               <th>Product</th>
               <th>Price(&euro;)</th>
+              <th>Pieces</th>
+              <th>Cost(&euro;)</th>
             </tr>
           </thead>
 
@@ -42,8 +44,25 @@ const Checkout = () => {
               <tr key={key}>
                 <td>{product.title}</td>
                 <td>{product.price}</td>
+                <td>{product.count}</td>
+                <td>{product.total}(&euro;)</td>
               </tr>
             ))}
+            <tr>
+              <td>Total cost</td>
+              <td>
+                {() => {
+                  function findSum (cartItems: ProductType[]) {
+                    let sum = 0
+                    for (let i = 0; i < cartItems.length; i++) {
+                      sum += cartItems[i].total
+                    }
+                    return sum
+                  }
+                  findSum(cartItems)
+                }}
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

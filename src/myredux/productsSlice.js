@@ -22,11 +22,16 @@ export const productsSlice = createSlice({
         /*  if product already in cart, raise count */
         if (state.cartItems[i].id === action.payload.id) {
           state.cartItems[i].count += action.payload.count
+          state.cartItems[i].total =
+            state.cartItems[i].count * state.cartItems[i].price
           flagIndx = i
         }
       }
       if (flagIndx === -1) {
         state.cartItems = [...state.cartItems, action.payload]
+        state.cartItems[state.cartItems.length - 1].total =
+          state.cartItems[state.cartItems.length - 1].price *
+          state.cartItems[state.cartItems.length - 1].count
       }
     },
     toggleModal: state => {
