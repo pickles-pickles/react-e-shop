@@ -21,6 +21,13 @@ const Checkout = () => {
     }
   }
 
+  function findSum (cartItems: ProductType[]) {
+    let sum = 0
+    for (let i = 0; i < cartItems.length; i++) {
+      sum += cartItems[i].total
+    }
+    return sum
+  }
   return (
     <>
       <div className=' d-flex justify-content-center text-center'>
@@ -45,23 +52,13 @@ const Checkout = () => {
                 <td>{product.title}</td>
                 <td>{product.price}</td>
                 <td>{product.count}</td>
-                <td>{product.total}(&euro;)</td>
+                <td>{product.total}</td>
               </tr>
             ))}
             <tr>
               <td>Total cost</td>
-              <td>
-                {() => {
-                  function findSum (cartItems: ProductType[]) {
-                    let sum = 0
-                    for (let i = 0; i < cartItems.length; i++) {
-                      sum += cartItems[i].total
-                    }
-                    return sum
-                  }
-                  findSum(cartItems)
-                }}
-              </td>
+              <td colSpan={2}></td>
+              <td className='text-left'>{findSum(cartItems)}</td>
             </tr>
           </tbody>
         </table>
