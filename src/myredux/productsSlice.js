@@ -29,9 +29,12 @@ export const productsSlice = createSlice({
       }
       if (flagIndx === -1) {
         state.cartItems = [...state.cartItems, action.payload]
-        state.cartItems[state.cartItems.length - 1].total =
-          state.cartItems[state.cartItems.length - 1].price *
-          state.cartItems[state.cartItems.length - 1].count
+        state.cartItems[state.cartItems.length - 1] = {
+          ...state.cartItems[state.cartItems.length - 1],
+          total:
+            state.cartItems[state.cartItems.length - 1].price *
+            state.cartItems[state.cartItems.length - 1].count
+        }
       }
     },
     toggleModal: state => {
